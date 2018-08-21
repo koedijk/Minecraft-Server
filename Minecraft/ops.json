@@ -1,0 +1,14 @@
+[
+  {
+    "uuid": "06ca9d43-4bfa-4c6d-8b80-69469201f080",
+    "name": "Koedijk",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "a43c3a0e-e7a2-43bd-bcfd-82f1709455ba",
+    "name": "CreeperSchaap",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  }
+]

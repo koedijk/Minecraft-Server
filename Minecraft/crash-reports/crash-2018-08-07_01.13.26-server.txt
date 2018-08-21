@@ -1,0 +1,94 @@
+---- Minecraft Crash Report ----
+// I just don't know what went wrong :(
+
+Time: 8/7/18 1:13 AM
+Description: Exception generating new chunk
+
+java.util.concurrent.ExecutionException: java.lang.RuntimeException: We are asking a region for a chunk out of bound | -1 784425
+	at java.util.concurrent.CompletableFuture.reportGet(Unknown Source)
+	at java.util.concurrent.CompletableFuture.get(Unknown Source)
+	at tb.c(SourceFile:126)
+	at tj.a(SourceFile:85)
+	at tk.c(SourceFile:123)
+	at tc.i_(SourceFile:220)
+	at net.minecraft.server.MinecraftServer.w(SourceFile:723)
+	at sn.w(SourceFile:357)
+	at net.minecraft.server.MinecraftServer.v(SourceFile:656)
+	at net.minecraft.server.MinecraftServer.run(SourceFile:559)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.RuntimeException: We are asking a region for a chunk out of bound | -1 784425
+	at th.c(SourceFile:118)
+	at axt.y(SourceFile:45)
+	at th.a_(SourceFile:124)
+	at axw.c(SourceFile:350)
+	at aey.a(SourceFile:714)
+	at ayc.a(SourceFile:285)
+	at bom.b(SourceFile:116)
+	at tv.a(SourceFile:15)
+	at tp.a(SourceFile:35)
+	at bmu.a(SourceFile:95)
+	at tw.a(SourceFile:62)
+	at tw.a(SourceFile:25)
+	at acr$a.a(SourceFile:130)
+	at java.util.concurrent.CompletableFuture.uniApply(Unknown Source)
+	at java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source)
+	at java.util.concurrent.CompletableFuture$Completion.exec(Unknown Source)
+	at java.util.concurrent.ForkJoinTask.doExec(Unknown Source)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(Unknown Source)
+	at java.util.concurrent.ForkJoinPool.runWorker(Unknown Source)
+	at java.util.concurrent.ForkJoinWorkerThread.run(Unknown Source)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at java.util.concurrent.CompletableFuture.reportGet(Unknown Source)
+
+-- Chunk to be generated --
+Details:
+	Location: -1,784426
+	Position hash: 3369088311099391
+	Generator: bom@35a31beb
+Stacktrace:
+	at tb.a(SourceFile:170)
+	at tb.c(SourceFile:129)
+	at tj.a(SourceFile:85)
+	at tk.c(SourceFile:123)
+	at tc.i_(SourceFile:220)
+	at net.minecraft.server.MinecraftServer.w(SourceFile:723)
+	at sn.w(SourceFile:357)
+	at net.minecraft.server.MinecraftServer.v(SourceFile:656)
+	at net.minecraft.server.MinecraftServer.run(SourceFile:559)
+	at java.lang.Thread.run(Unknown Source)
+
+-- Affected level --
+Details:
+	Level name: Wijkteam Regenboog 666
+	All players: 5 total; [te['Jvikk'/405, l='Wijkteam Regenboog 666', x=240.84, y=20.54, z=-213.84], te['Dahli'/425, l='Wijkteam Regenboog 666', x=291.03, y=75.50, z=-177.96], te['CreeperSchaap'/728, l='Wijkteam Regenboog 666', x=4960.94, y=62.07, z=1248.72], te['Pryymez'/23688, l='Wijkteam Regenboog 666', x=351.64, y=48.00, z=-537.74], te['Koedijk'/4060, l='Wijkteam Regenboog 666', x=0.50, y=128.82, z=12550800.50]]
+	Chunk stats: ServerChunkCache: 1606 Drop: 136
+	Level seed: 2753148996926154475
+	Level generator: ID 00 - default, ver 1. Features enabled: true
+	Level generator options: {}
+	Level spawn location: World: (176,64,-192), Chunk: (at 0,4,0 in 11,-12; contains blocks 176,0,-192 to 191,255,-177), Region: (0,-1; contains chunks 0,-32 to 31,-1, blocks 0,0,-512 to 511,255,-1)
+	Level time: 1617598 game time, 28443 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 163642 (now: false), thunder time: 75898 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+
+-- System Details --
+Details:
+	Minecraft Version: 1.13
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_171, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 1260888760 bytes (1202 MB) / 2426929152 bytes (2314 MB) up to 3817865216 bytes (3641 MB)
+	JVM Flags: 2 total; -Xms1024M -Xmx4096M
+	Profiler Position: N/A (disabled)
+	Player Count: 5 / 20; [te['Jvikk'/405, l='Wijkteam Regenboog 666', x=240.84, y=20.54, z=-213.84], te['Dahli'/425, l='Wijkteam Regenboog 666', x=291.03, y=75.50, z=-177.96], te['CreeperSchaap'/728, l='Wijkteam Regenboog 666', x=4960.94, y=62.07, z=1248.72], te['Koedijk'/4060, l='Wijkteam Regenboog 666', x=0.50, y=128.82, z=12550800.50], te['Pryymez'/23688, l='Wijkteam Regenboog 666', x=351.64, y=48.00, z=-537.74]]
+	Data Packs: vanilla
+	Is Modded: Unknown (can't tell)
+	Type: Dedicated Server (map_server.txt)
